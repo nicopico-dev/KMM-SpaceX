@@ -81,3 +81,9 @@ android {
         targetSdkVersion(30)
     }
 }
+
+sqldelight {
+    database("SpaceXDatabase") {
+        packageName = "fr.nicopico.kmmspacex.shared.cache"
+    }
+}
