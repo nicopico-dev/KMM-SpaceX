@@ -30,11 +30,12 @@ kotlin {
         podfile = project.file("../iosApp/Podfile")
     }
 
-    val coroutinesVersion = "1.3.9-native-mt"
-    val serializationVersion = "1.0.0-RC"
-    val ktorVersion = "1.4.0"
+    val serializationVersion: String by project
+    val ktorVersion: String by project
+    val coroutinesVersion: String by project
     val sqlDelightVersion: String by project
-    
+    val junitVersion: String by project
+
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -70,7 +71,7 @@ kotlin {
             dependsOn(androidAndroidTestRelease)
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("junit:junit:4.13.2")
+                implementation("junit:junit:$junitVersion")
             }
         }
         val iosMain by getting {
